@@ -24,7 +24,9 @@ def test_model(model_name, conversation: str):
     grader = grader.with_structured_output(GradingFormatter)
     
     passed = False
-    for i in range(10):
+    
+    MAX_ITERATION_COUNT = 10
+    for _ in range(MAX_ITERATION_COUNT):
         new_dialog=simulator.invoke(conversation).content  # Simulate conversation
         if check_response_validity(new_dialog) == False:
             continue
