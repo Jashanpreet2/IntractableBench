@@ -8,7 +8,7 @@ load_dotenv()
 
 # Checks whether or not the LLM response is valid
 def check_response_validity(response):
-    return response and response[-1] == "."
+    return response and response[-1] == "." and ":" in response
 
 # Tests a model. Returns pass if 
 def test_model(model_name, conversation: str):
@@ -26,6 +26,8 @@ def test_model(model_name, conversation: str):
     passed = False
     for i in range(10):
         new_dialog=simulator.invoke(conversation).content  # Simulate conversation
+        if check_response_validity(new_dialog) == False:
+            continue
         conversation += f"\n\n{new_dialog}"  # Append the new response
         
         # Grade the conversation
