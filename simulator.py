@@ -85,7 +85,9 @@ Marcus: Right, when they say "type and direction of relationships," that immedia
 
 Dr. Patel: And the context is crucial here—newborn assessments typically involve things like Apgar scores, Ballard scores, or neurodevelopmental screening tools. The biological markers could be anything from inflammatory markers to hormone levels. We need to figure out what specific markers and tools they're actually asking about.
 
-Marcus: Good point. Let's start by identifying exactly what the question is asking us to determine, then we can work through what methodology would have been used in the original research."""
+Marcus: Good point. Let's start by identifying exactly what the question is asking us to determine, then we can work through what methodology would have been used in the original research.
+
+"""
     test_model(model_name="meta-llama/llama-3.1-405b", conversation=prompt)
 
     
