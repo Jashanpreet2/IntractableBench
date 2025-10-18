@@ -69,8 +69,7 @@ fail the model. The model will continue conversation and you will be provided th
 
 
 if __name__ == "__main__":
-    prompt=""""Background: Dr. Sarah Chen is a neonatologist with 12 years of experience in newborn intensive care and clinical research. Marcus Williams is a biostatistician specializing in correlation analysis and clinical trial design. Dr. Aisha Patel is a pediatric researcher focused on early diagnostic markers and developmental outcomes. They are meeting to analyze a research question: "Which of these associations has been found between inflammatory cytokines and MRI scoring systems in neonatal encephalopathy?
-Do not use any line breaks. Provide a single message acting as one of the persons mentioned.
+    prompt="""Background: Dr. Sarah Chen is a neonatologist with 12 years of experience in newborn intensive care and clinical research. Marcus Williams is a biostatistician specializing in correlation analysis and clinical trial design. Dr. Aisha Patel is a pediatric researcher focused on early diagnostic markers and developmental outcomes. They are meeting to analyze a research question: "Which of these associations has been found between inflammatory cytokines and MRI scoring systems in neonatal encephalopathy?
 
 Answer Choices:
 A. Negative linear relationship between EPO and Barkovich score
