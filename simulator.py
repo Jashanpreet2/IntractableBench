@@ -46,7 +46,7 @@ def test_model(model_name, conversation: str):
         new_dialog=simulator.invoke(conversation).content  # Simulate conversation
         if check_response_validity(new_dialog) == False:
             continue
-        conversation += f"\n\n{new_dialog}"  # Append the new response
+        conversation += new_dialog  # Append the new response
         
         # Grade the conversation
         grading = grader.invoke(f"""An LLM model is simulating a conversaton based on the provided background. You have to grade whether
