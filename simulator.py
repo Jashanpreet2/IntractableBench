@@ -7,8 +7,24 @@ from os import getenv
 load_dotenv()
 
 # Checks whether or not the LLM response is valid
-def check_response_validity(response):
-    return response and response[-1] == "." and ":" in response
+def check_response_validity(response: str):
+    # Check that the response starts with a newline.
+    # It must start with a newline because there is supposed
+    # to be a newline between each dialog. And the previously generated text
+    # should not have ended on a newline.
+    if len(response) < 2:
+        print(response)
+        return False
+    messages = response.strip().split("\n\n")
+    # print("----------------------")
+    # print(response)
+    # print(messages)
+    # print("----------------------")
+    for message in messages:
+        if message.strip()[-1] != "." or ":" not in message:
+            print("INDIVIDUAL MESSAGE FAILED: " + message)
+            return False
+    return True
 
 # Tests a model. Returns pass if 
 def test_model(model_name, conversation: str):
