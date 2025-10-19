@@ -21,7 +21,7 @@ def check_response_validity(response: str):
     # print(messages)
     # print("----------------------")
     for message in messages:
-        if message.strip()[-1] != "." or ":" not in message:
+        if message.strip()[-1] not in [".", "!", "?"] or ":" not in message:
             print("INDIVIDUAL MESSAGE FAILED: " + message)
             return False
     return True
